@@ -1,10 +1,13 @@
 mkdir build
 cd build
 
-echo #define GEOS_SVN_REVISION 4298 > geos_svn_revision.h
+:: this is probably not the right revision.  I'm not sure how much it matters - just incorrect info.
+::    This should be generatable but requires a bash shell
+echo #define GEOS_REVISION "0" > geos_revision.h
+
 
 :: Configure.
-cmake -G "NMake Makefiles" ^
+cmake -G "%CMAKE_GENERATOR%" ^
       -D CMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
       -D GEOS_BUILD_STATIC=OFF ^
       -D CMAKE_BUILD_TYPE=Release ^
