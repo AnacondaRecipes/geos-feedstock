@@ -1,0 +1,27 @@
+From 492052525ec0f3b1511daacc6c104f480eb97af2 Mon Sep 17 00:00:00 2001
+From: Jonathan Helmus <jjhelmus@gmail.com>
+Date: Wed, 19 Dec 2018 17:12:34 -0600
+Subject: [PATCH 2/3] DirectedEdgeStar vc9 support
+
+---
+ src/geomgraph/DirectedEdgeStar.cpp | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/src/geomgraph/DirectedEdgeStar.cpp b/src/geomgraph/DirectedEdgeStar.cpp
+index 58447d9..4d6a6bd 100644
+--- a/src/geomgraph/DirectedEdgeStar.cpp
++++ b/src/geomgraph/DirectedEdgeStar.cpp
+@@ -58,8 +58,8 @@ int
+ DirectedEdgeStar::getOutgoingDegree()
+ {
+ 	int degree = 0;
+-	EdgeEndStar::iterator endIt=end();
+-	for (EdgeEndStar::iterator it=begin(); it!=endIt; ++it)
++	EdgeEndStar::const_iterator endIt=end();
++	for (EdgeEndStar::const_iterator it=begin(); it!=endIt; ++it)
+ 	{
+ 		assert(*it);
+ 		assert(dynamic_cast<DirectedEdge*>(*it));
+-- 
+2.7.4
+
