@@ -26,6 +26,7 @@ requirements:
     - libtool  # [not win]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - make  # [not win]
 
 test:
   commands:
