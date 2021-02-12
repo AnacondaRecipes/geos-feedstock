@@ -10,7 +10,7 @@ source:
   patches:
     - 0001-fix-xmltester.patch
     - 0002-remove-bad-test.patch  # [linux and not x86]
-    - 0003-removed-bad-issue.patch  # [linux and not x86]
+#   - 0003-removed-bad-issue.patch  # [linux and not x86]
     - 0004-remove-failing-geos-test.patch  # [linux and not x86]
     - 0005-remove-failing-linnearref-test.patch  # [linux and not x86]
 build:
