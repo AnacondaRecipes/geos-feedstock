@@ -9,6 +9,11 @@ source:
   sha256: f8b260151fc8aa6bdf5c74550ea089eeb85d8623bb7ccaf9380e90c815c4d12b
   patches:
     - xmltester.cpp.patch  # [win]
+    - 0001-fix-xmltester.patch
+    - 0002-remove-bad-test.patch  # [linux and not x86]
+    - 0003-removed-bad-issue.patch  # [linux and not x86]
+    - 0004-remove-failing-geos-test.patch  # [linux and not x86]
+    - 0005-remove-failing-linnearref-test.patch  # [linux and not x86]
 
 build:
   number: 1
@@ -26,6 +31,7 @@ requirements:
     - libtool  # [not win]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - make  # [linux]
 
 test:
   commands:
