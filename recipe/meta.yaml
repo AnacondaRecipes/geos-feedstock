@@ -1,4 +1,4 @@
-{% set version = "3.9.1" %}
+{% set version = "3.10.0rc1" %}
 
 package:
   name: geos
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/libgeos/libgeos/archive/{{ version }}.tar.gz
-  sha256: e9e20e83572645ac2af0af523b40a404627ce74b3ec99727754391cdf5b23645
+  sha256: d5558cd419c8d46bdc958064cb97f963d1ea793866414c025906ec15033512ed
   patches:
     - 0001-fix-xmltester.patch
     - 0002-remove-bad-test.patch  # [linux and not x86]
