@@ -7,6 +7,8 @@ package:
 source:
   url: https://github.com/libgeos/libgeos/archive/{{ version }}.tar.gz
   sha256: 42c9e048b7103ecfce784e82aef2bcd1afec340b4483295cb3ff3817960789b1
+  patches:
+    - patches/0001-unconditional-geos-pc.patch
 
 build:
   number: 0
