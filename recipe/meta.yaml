@@ -23,9 +23,11 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - cmake
-    - make   # [not win]
-    - ninja  # [win]
- 
+    - make      # [not win]
+    - ninja     # [win]
+    - patch     # [not win]
+    - m2-patch  # [win]
+
 test:
   commands:
     - geos-config --version  # [not win]
