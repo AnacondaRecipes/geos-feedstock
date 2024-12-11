@@ -31,6 +31,7 @@ test:
 about:
   home: https://trac.osgeo.org/geos/
   license: LGPL-2.1
+  license_family: LGPL
   license_file: COPYING
   summary: Geometry Engine - Open Source
   description: |
