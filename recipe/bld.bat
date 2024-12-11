@@ -2,7 +2,7 @@ mkdir build
 cd build
 
 :: Configure.
-cmake -G "%CMAKE_GENERATOR%" ^
+cmake -G "Ninja" ^
       -D CMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
       -D BUILD_SHARED_LIBS=ON ^
       -D CMAKE_BUILD_TYPE=Release ^
