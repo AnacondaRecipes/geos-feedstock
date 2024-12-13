@@ -1,4 +1,4 @@
-{% set version = "3.9.1" %}
+{% set version = "3.10.6" %}
 
 package:
   name: geos
@@ -6,13 +6,10 @@ package:
 
 source:
   url: https://github.com/libgeos/libgeos/archive/{{ version }}.tar.gz
-  sha256: e9e20e83572645ac2af0af523b40a404627ce74b3ec99727754391cdf5b23645
+  sha256: 42c9e048b7103ecfce784e82aef2bcd1afec340b4483295cb3ff3817960789b1
   patches:
-    - 0001-fix-xmltester.patch
-    - 0002-remove-bad-test.patch  # [linux and not x86]
-#   - 0003-removed-bad-issue.patch  # [linux and not x86]
-    - 0004-remove-failing-geos-test.patch  # [linux and not x86]
-    - 0005-remove-failing-linnearref-test.patch  # [linux and not x86]
+    - patches/0001-unconditional-geos-pc.patch
+
 build:
   number: 0
   skip: true  # [win and vc<14]
@@ -23,31 +20,30 @@ build:
 
 requirements:
   build:
-    - msinttypes  # [win]
-    - cmake  # [win]
-    - automake  # [not win]
-    - libtool  # [not win]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - make  # [not win]
-    - patch       # [not win]
-    - m2-patch    # [win]
- 
+    - cmake
+    - make      # [not win]
+    - ninja     # [win]
+    - patch     # [not win]
+    - m2-patch  # [win]
+
 test:
   commands:
     - geos-config --version  # [not win]
 
 about:
-  home: http://trac.osgeo.org/geos/
-  license: LGPL-2.1
+  home: https://libgeos.org/
+  license: LGPL-2.1-or-later
+  license_family: LGPL
   license_file: COPYING
   summary: Geometry Engine - Open Source
   description: |
     GEOS (Geometry Engine - Open Source) is a C++ port of the Java Topology
     Suite (JTS). As such, it aims to contain the complete functionality of
     JTS in C++.
-  doc_url: http://trac.osgeo.org/geos/
-  dev_url: https://github.com/libgeos/libgeos
+  doc_url: https://libgeos.org/
+  dev_url: https://github.com/libgeos/geos
 
 extra:
   recipe-maintainers:
