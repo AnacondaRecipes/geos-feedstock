@@ -1,4 +1,5 @@
 anaconda_config_version: 1
 upstream_sources:
-  - github:
-      identifier: libgeos/libgeos
+  - webpage:
+      url: https://download.osgeo.org/geos/
+      regex: geos-(.*)\.tar\.bz2
