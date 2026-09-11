@@ -9,6 +9,7 @@ source:
   sha256: 42c9e048b7103ecfce784e82aef2bcd1afec340b4483295cb3ff3817960789b1
   patches:
     - patches/0001-unconditional-geos-pc.patch
+    - patches/0002-include-cstddef.patch
 
 build:
   number: 1

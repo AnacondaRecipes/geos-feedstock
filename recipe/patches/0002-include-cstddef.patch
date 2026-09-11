@@ -1,0 +1,12 @@
+diff --git a/include/geos/io/ByteOrderDataInStream.h b/include/geos/io/ByteOrderDataInStream.h
+index 58c4ce4..4a7bb1a 100644
+--- a/include/geos/io/ByteOrderDataInStream.h
++++ b/include/geos/io/ByteOrderDataInStream.h
+@@ -22,6 +22,7 @@
+ 
+ #include <geos/export.h>
+ #include <cstdint>
++#include <cstddef>
+ 
+ //#include <geos/io/ParseException.h>
+ //#include <geos/io/ByteOrderValues.h>
