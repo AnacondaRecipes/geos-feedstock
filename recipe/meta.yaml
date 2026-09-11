@@ -21,12 +21,12 @@ build:
 
 requirements:
   build:
+    - {{ stdlib('c') }}
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - cmake
     - make      # [not win]
     - ninja     # [win]
-    - patch     # [not win]
 
 test:
   commands:
