@@ -9,9 +9,10 @@ source:
   sha256: 42c9e048b7103ecfce784e82aef2bcd1afec340b4483295cb3ff3817960789b1
   patches:
     - patches/0001-unconditional-geos-pc.patch
+    - patches/0002-include-cstddef.patch
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win and vc<14]
   run_exports:
     # pretty poor backcompat.  SO name changes each release.
@@ -20,13 +21,12 @@ build:
 
 requirements:
   build:
+    - {{ stdlib('c') }}
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - cmake
     - make      # [not win]
     - ninja     # [win]
-    - patch     # [not win]
-    - m2-patch  # [win]
 
 test:
   commands:

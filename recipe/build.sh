@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export CMAKE_POLICY_VERSION_MINIMUM=3.5
+
 mkdir -p build && cd build
 
 cmake ${CMAKE_ARGS} \
