@@ -14,6 +14,7 @@ cmake ${CMAKE_ARGS} \
 make -j${CPU_COUNT} ${VERBOSE_CM}
 
 if [[ "${CONDA_BUILD_CROSS_COMPILATION}" != "1" ]]; then
+    export DYLD_FALLBACK_LIBRARY_PATH="$BUILD_PREFIX/lib:$PREFIX/lib${DYLD_FALLBACK_LIBRARY_PATH:+:$DYLD_FALLBACK_LIBRARY_PATH}"
     ctest --output-on-failure
 fi
 
