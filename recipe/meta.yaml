@@ -10,10 +10,9 @@ source:
   sha256: 512118b3be3ccefbca66b36b0f3e895576d08d6ff330ba1511a31a306abbb477
   patches:
     - patches/0001-unconditional-geos-pc.patch
-    - patches/0002-include-cstddef.patch
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win and vc<14]
   run_exports:
     # pretty poor backcompat.  SO name changes each release.
